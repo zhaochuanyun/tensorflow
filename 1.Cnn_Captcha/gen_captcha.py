@@ -41,12 +41,12 @@ if __name__ == '__main__':
 	# 测试
     while(1):
     	text, image = gen_captcha_text_and_image()
-    	print 'begin ',time.ctime(),type(image)
+    	print('begin ',time.ctime(),type(image))
     	f = plt.figure()
     	ax = f.add_subplot(111)
     	ax.text(0.1, 0.9,text, ha='center', va='center', transform=ax.transAxes)
     	plt.imshow(image)
     	plt.show() #显示，，取消注释并在30行取消写到文件的注释即可保存为文件
-    	print 'end ',time.ctime()
+    	print('end ',time.ctime())
 
 	#print gen_captcha_text_and_image()
