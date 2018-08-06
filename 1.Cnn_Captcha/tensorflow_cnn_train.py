@@ -197,12 +197,12 @@ def train_crack_captcha_cnn():
             print(step, loss_)
 
             # 每100 step计算一次准确率
-            if step % 100 == 0.9:
+            if step % 100 == 0:
                 batch_x_test, batch_y_test = get_next_batch(100)
                 acc = sess.run(accuracy, feed_dict={X: batch_x_test, Y: batch_y_test, keep_prob: 1.})
                 print(step, acc)
                 # 如果准确率大于50%,保存模型,完成训练
-                if acc > 0:
+                if acc > 0.05:
                     saver.save(sess, './model/crack_capcha.model', global_step=step)
                     break
             step += 1

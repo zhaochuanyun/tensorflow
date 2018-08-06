@@ -15,7 +15,7 @@ ALPHABET = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N'
 
 # 验证码一般都无视大小写；验证码长度4个字符
 def random_captcha_text(char_set=number + alphabet + ALPHABET, captcha_size=4):
-    ''' 指定使用的验证码内容列表和长期 返回随机的验证码文本 '''
+    """ 指定使用的验证码内容列表和长期 返回随机的验证码文本 """
     captcha_text = []
     for i in range(captcha_size):
         c = random.choice(char_set)
@@ -24,7 +24,7 @@ def random_captcha_text(char_set=number + alphabet + ALPHABET, captcha_size=4):
 
 
 def gen_captcha_text_and_image():
-    """生成字符对应的验证码 """
+    """ 生成字符对应的验证码 """
     image = ImageCaptcha()  # 导入验证码包 生成一张空白图
 
     captcha_text = random_captcha_text()  # 随机一个验证码内容
@@ -33,8 +33,8 @@ def gen_captcha_text_and_image():
     captcha = image.generate(captcha_text)
     image.write(captcha_text, './image/' + captcha_text + '.jpg')  # 写到文件
 
-    # rm  =  'rm '+'./image/' + captcha_text + '.jpg'
-    # os.system(rm)
+    rm = 'rm ./image/' + captcha_text + '.jpg'
+    os.system(rm)
 
     captcha_image = Image.open(captcha)  # 转换为图片格式
     captcha_image = np.array(captcha_image)  # 转换为 np数组类型

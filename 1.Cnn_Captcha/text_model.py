@@ -1,3 +1,7 @@
+from tensorflow_cnn_train import *
+import tensorflow as tf
+
+
 def crack_captcha(captcha_image):
     output = crack_captcha_cnn()
 
