@@ -90,10 +90,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="67" />
-    <option name="y" value="25" />
-    <option name="width" value="1853" />
-    <option name="height" value="1055" />
+    <option name="x" value="1680" />
+    <option name="y" value="23" />
+    <option name="width" value="1920" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -161,9 +161,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
