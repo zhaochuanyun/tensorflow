@@ -4,6 +4,7 @@ from gen_captcha import number
 from gen_captcha import alphabet
 from gen_captcha import ALPHABET
 
+import datetime
 import numpy as np
 import tensorflow as tf
 
@@ -194,13 +195,13 @@ def train_crack_captcha_cnn():
         while True:
             batch_x, batch_y = get_next_batch(64)
             _, loss_ = sess.run([optimizer, loss], feed_dict={X: batch_x, Y: batch_y, keep_prob: 0.75})
-            print(step, loss_)
+            # print(step, loss_)
 
             # 每100 step计算一次准确率
             if step % 100 == 0:
                 batch_x_test, batch_y_test = get_next_batch(100)
                 acc = sess.run(accuracy, feed_dict={X: batch_x_test, Y: batch_y_test, keep_prob: 1.})
-                print(step, acc)
+                print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'), step, acc)
                 # 如果准确率大于50%,保存模型,完成训练
                 if acc > 0.05:
                     saver.save(sess, './model/crack_capcha.model', global_step=step)
